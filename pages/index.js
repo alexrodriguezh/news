@@ -13,7 +13,6 @@ const NOTICIAS = gql`
     noticias{
       id
       titulo
-      resumen
       contenido
       imagen{
         id
@@ -67,12 +66,12 @@ export default function Home() {
               noticias = {noticias}
             />
 
+            
+          </main>
             <a className="bg-redancash p-1 font-bold text-white ml-3 px-4 flex justify-center cursor-pointer">
               Ver más
               <svg fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-6 pl-3"><path d="M19 9l-7 7-7-7"></path></svg>
             </a>
-          </main>
-          
           
 
         </div>

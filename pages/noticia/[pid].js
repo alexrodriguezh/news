@@ -34,7 +34,6 @@ const NOTICIAS = gql`
         noticias{
         id
         titulo
-        resumen
         contenido
         imagen{
             id
