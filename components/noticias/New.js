@@ -30,7 +30,7 @@ const New = ({noti}) => {
                         <div>
                             <img
                                 className="w-full h-20"
-                                src={`http://localhost:1337${imagen.url}`}
+                                src={imagen.url}
                             />
                         </div>
                         <div className="w-3 h-full bg-redancash"></div>

@@ -10,7 +10,7 @@ const EncabezadoVideos = ({video}) => {
             <a className="bg-redancash cursor-pointer">
                 <img
                     className="w-full h-96"
-                    src={`http://localhost:1337${portada.imagen.url}`} 
+                    src={portada.imagen.url}
                 />
             </a>
             <p className="bg-white font-bold px-3 py-2">{portada.titulo}</p>

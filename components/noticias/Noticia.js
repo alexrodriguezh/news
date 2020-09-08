@@ -29,7 +29,7 @@ const Noticia = ({noticia}) => {
                     <div className="relative overflow-hidden shadow-lg">
                     <img
                         className="w-full h-32"
-                        src={`http://localhost:1337${imagen.url}`}
+                        src={imagen.url}
                         alt="{titulo}"
                     />
                     <div className="bg-white w-28 h-8 absolute -mt-8 right-0 mr-8 rounded-t">

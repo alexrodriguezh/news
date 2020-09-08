@@ -95,7 +95,8 @@ const verNoticia = () => {
                         <p>{data.noticia.categoria.nombre}</p>
                         <p>{data.noticia.created_at}</p>
                     </div>
-                    <img className="h-auto w-full" src={`http://localhost:1337${data.noticia.imagen.url}`} alt={data.noticia.titulo} />
+                    {/* <img className="h-auto w-full" src={`http://localhost:1337${data.noticia.imagen.url}`} alt={data.noticia.titulo} /> */}
+                    <img className="h-auto w-full" src={data.noticia.imagen.url} alt={data.noticia.titulo} />
                     <div>{ReactHtmlParser(data.noticia.contenido)}</div>
                 </div>
                 <div className="w-3/12 ml-3 pl-2 border-l-2 border-gray-300">

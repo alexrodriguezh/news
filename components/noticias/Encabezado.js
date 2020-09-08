@@ -12,7 +12,7 @@ const Encabezado = ({encabezado}) => {
             <a className="bg-redancash mr-3 w-4/6 cursor-pointer">
                 <img
                     className="w-full"
-                    src={`http://localhost:1337${portada.imagen.url}`} 
+                    src={portada.imagen.url}
                 />
             </a>
             <a className="w-2/6 cursor-pointer">

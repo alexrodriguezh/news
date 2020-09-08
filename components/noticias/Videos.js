@@ -12,7 +12,7 @@ const Videos = ({vid}) => {
                     <div>
                         <img 
                             className="h-24 w-full"
-                            src={`http://localhost:1337${imagen.url}`}
+                            src={imagen.url}
                         />
                     </div>
                 </a>
