@@ -36,7 +36,7 @@ export default function Home() {
   const { noticias } = data
   console.log(noticias)
 
-  const temas = ["NOTICIAS EN VIVO", "LOCAL", "NACIONAL", "DEPORTE", "SALUD", "REPORTAJES", "ENTREVISTAS", "COLUMNA", "VIDEOS", "POLITICA", "ECONOMIA"]
+  const temas = ["NOTICIAS EN VIVO", "LOCALL", "NACIONAL", "DEPORTE", "SALUD", "REPORTAJES", "ENTREVISTAS", "COLUMNA", "VIDEOS", "POLITICA", "ECONOMIA"]
 
   return (
     <>
