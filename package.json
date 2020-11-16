@@ -14,20 +14,25 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "@vercel/client": "^9.0.1",
+    "@vercel/client": "^9.0.3",
     "apollo-upload-client": "^13.0.0",
     "autoprefixer": "^9.8.0",
+    "emotion": "^10.0.27",
     "formik": "^2.1.4",
     "graphql": "^15.0.0",
+    "html-react-parser": "^0.14.0",
     "jodit-react": "^1.0.42",
     "moment": "^2.27.0",
     "next": "9.4.4",
     "node-fetch": "^2.6.1",
     "react": "16.13.1",
+    "react-custom-share": "^0.4.8",
     "react-dom": "16.13.1",
     "react-html-parser": "^2.0.2",
+    "react-icons": "^3.11.0",
     "react-markdown": "^4.3.1",
     "react-select": "^3.1.0",
+    "react-share": "^4.3.1",
     "slate-plain-serializer": "^0.7.13",
     "tailwindcss": "^1.4.6",
     "universal-cookie": "^4.0.3",
@@ -36,6 +41,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@zeit/next-css": "^1.0.1",
-    "next-purgecss": "^4.0.0"
+    "next-purgecss": "^4.0.0",
+    "tailwindcss-responsive-embed": "^1.0.0"
   }
 }

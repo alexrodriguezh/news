@@ -60,7 +60,7 @@ const Header = () => {
                     { data.user.avatar === null ? (
                         <img className="h-full w-full object-cover" src="/1.png" alt="Avatar perfil"/>
                     ) : (
-                        <img className="h-full w-full object-cover" src={`http://localhost:1337${data.user.avatar.url}`} alt="Avatar perfil"/>
+                        <img className="h-full w-full object-cover" src={data.user.avatar.url} alt="Avatar perfil"/>
                     ) }
                     </button>
                     { isOn === true ? (

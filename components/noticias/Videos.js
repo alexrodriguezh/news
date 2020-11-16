@@ -6,12 +6,12 @@ const Videos = ({vid}) => {
     const { id, titulo, resumen, contenido, imagen, categoria, created_at } = vid
 
     return(
-        <div className="bg-white mb-5 mr-4 lg:max-w-full last:mb-0">
+        <div className="bg-white lg:max-w-full last:mb-0">
             <figure className="flex flex-row">
                 <a className="w-5/12 cursor-pointer"> 
                     <div>
                         <img 
-                            className="h-24 w-full"
+                            className="h-auto w-full"
                             src={imagen.url}
                         />
                     </div>

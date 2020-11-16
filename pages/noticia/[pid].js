@@ -4,10 +4,14 @@ import Head from 'next/head'
 import '../../assets/style.css'
 import { gql, useQuery } from '@apollo/client'
 import Cookies from 'universal-cookie'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from "react-html-parser"
 import ListadoNoticias from '../../components/noticias/ListadoNoticias'
 import ListadoNews from '../../components/noticias/ListadoNews'
 import Footer from '../../components/Footer'
+import moment from 'moment'
+import Nav from '../../components/Nav'
+
+moment.locale('es')
 
 const NOTICIA = gql`
     query noticia($id: ID!){
@@ -50,6 +54,8 @@ const NOTICIAS = gql`
 
 const verNoticia = () => {
 
+    const router = useRouter()
+
     const cookie = new Cookies()
 
     const id = cookie.get("idNew")
@@ -71,8 +77,12 @@ const verNoticia = () => {
     if (error) return console.log(error)
     console.log(data)
 
-    const IMAGE_BASE_URL= 'http://localhost:1337'
-    const temas = ["NOTICIAS EN VIVO", "LOCAL", "NACIONAL", "DEPORTE", "SALUD", "REPORTAJES", "ENTREVISTAS", "COLUMNA", "VIDEOS", "POLITICA", "ECONOMIA"]
+    const irEnlace = () => {
+        router.push('/nacional')
+    }
+
+    const temas = ["NACIONAL", "POLITICA", "ECONOMIA", "AMBIENTE", "MINERIA", "SALUD", "DEPORTE", "EDUCACION", "CULTURA", "TURISMO", "COLUMNA", "VIDEOS", "INFOGRAFIAS"]
+
     return(
         <>
             <Head>
@@ -81,25 +91,19 @@ const verNoticia = () => {
             <header className="w-full bg-black h-20 py-2">
                 <img src="/logo.png" className="h-16 mx-auto"></img>
             </header>
-            <nav className="w-full flex-grow lg:flex lg:items-center lg:w-auto">
-                <ul className="flex text-sm lg:flex-grow justify-center">
-                {temas.map(i => (
-                    <li className="font-semibold my-2 text-black hover:border-redancash mr-4 border-b-2 hover:text-redancash cursor-pointer">{i}</li>
-                ))}
-                </ul>
-            </nav>
-            <main className="flex bg-white lg:px-32 md:px-12 sm:px-6">
+            <Nav />
+            
+            <main className="flex w-2/3 m-auto">
                 <div className="bg-white w-9/12 mb-8">
-                    <div className="font-serif lg:text-4xl md:text-2xl sm:text-sm font-bold">{data.noticia.titulo}</div>
-                    <div className="flex justify-between">
-                        <p>{data.noticia.categoria.nombre}</p>
-                        <p>{data.noticia.created_at}</p>
-                    </div>
-                    {/* <img className="h-auto w-full" src={`http://localhost:1337${data.noticia.imagen.url}`} alt={data.noticia.titulo} /> */}
                     <img className="h-auto w-full" src={data.noticia.imagen.url} alt={data.noticia.titulo} />
+                    <div className="flex justify-between mt-8 mb-4">
+                        <p className="bg-black text-white mx-1">{data.noticia.categoria.nombre}</p>
+                    </div>
+                    <div className="font-serif lg:text-4xl md:text-2xl sm:text-sm font-bold">{data.noticia.titulo}</div>
+                    <div className="flex text-gray-600 font-bold text-xs my-3"><svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>{moment(data.noticia.created_at).format('LLLL').toUpperCase()}</div>
                     <div>{ReactHtmlParser(data.noticia.contenido)}</div>
                 </div>
-                <div className="w-3/12 ml-3 pl-2 border-l-2 border-gray-300">
+                <div className="w-3/12 ml-5 pl-2 border-l-2 border-gray-300">
                     <ListadoNews
                         key = {noticias.id}
                         news = {noticias}

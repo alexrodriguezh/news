@@ -7,8 +7,8 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
     // link: new HttpLink({
     link: createUploadLink({
-        // uri: 'http://localhost:1337/graphql',
-        uri: 'https://redancash.herokuapp.com/graphql',
+        uri: 'http://localhost:1337/graphql',
+        //uri: 'https://redancash.herokuapp.com/graphql',
         fetch
     })
 })

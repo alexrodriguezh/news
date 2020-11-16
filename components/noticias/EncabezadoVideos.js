@@ -9,7 +9,7 @@ const EncabezadoVideos = ({video}) => {
         <aside>
             <a className="bg-redancash cursor-pointer">
                 <img
-                    className="w-full h-96"
+                    className="w-full h-auto"
                     src={portada.imagen.url}
                 />
             </a>

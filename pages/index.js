@@ -7,6 +7,8 @@ import Encabezado from '../components/noticias/Encabezado'
 import Footer from '../components/Footer'
 import EncabezadoVideos from '../components/noticias/EncabezadoVideos'
 import ListadoVideos from '../components/noticias/ListadoVideos'
+import Link from 'next/link'
+import Nav from '../components/Nav'
 
 const NOTICIAS = gql`
   query noticias{
@@ -36,26 +38,18 @@ export default function Home() {
   const { noticias } = data
   console.log(noticias)
 
-  const temas = ["NOTICIAS EN VIVO", "LOCALL", "NACIONAL", "DEPORTE", "SALUD", "REPORTAJES", "ENTREVISTAS", "COLUMNA", "VIDEOS", "POLITICA", "ECONOMIA"]
-
   return (
     <>
       <Head>
           Red Ancash
       </Head>
-      <header className="w-full bg-black h-20 py-2">
-        <img src="/logo.png" className="h-16 mx-auto"></img>
+      <header className="w-full bg-gray-800 h-20 py-2">
+        <Link href="/"><img src="/logo.png" className="h-16 mx-auto cursor-pointer"></img></Link>
       </header>
-      <nav className="w-full flex-grow lg:flex lg:items-center lg:w-auto">
-        <ul className="flex text-sm lg:flex-grow justify-center">
-          {temas.map(i => (
-            <li className="font-semibold my-2 text-black hover:border-redancash mr-4 border-b-2 hover:text-redancash cursor-pointer" key={i}>{i}</li>
-          ))}
-        </ul>
-      </nav>
-      <div className="flex lg:px-32 md:px-12 sm:px-6">
+      <Nav />
+      <div className="flex flex-wrap container m-auto">
 
-        <div className="flex flex-wrap w-9/12">
+        <div className="flex flex-wrap w-full xl:w-9/12 lg:w-9/12 md:w-2/3 sm:w-full m-auto">
           <Encabezado
             key = {noticias.id}
             encabezado = {noticias}
@@ -65,8 +59,6 @@ export default function Home() {
               key = {noticias.id}
               noticias = {noticias}
             />
-
-            
           </main>
           <a className="bg-redancash p-1 font-bold text-white ml-3 px-4 flex justify-center cursor-pointer">
               Ver más
@@ -76,23 +68,26 @@ export default function Home() {
 
         </div>
 
-        <div className="bg-gray-100 w-3/12">
+        
+        <div className="w-full xl:w-3/12 lg:w-3/12 md:w-1/3 sm:w-3/4 sm:mx-auto">
+          
           <ListadoNews
             key = {noticias.id}
             news = {noticias}
           />
+          
         </div>
         
       </div>
       {/* Sección videos */}
-      <div className="flex bg-white pl-3 my-3 lg:mx-32 md:mx-12 sm:mx-6">
-        <div className="bg-redancash w-3/5 mr-2">
+      <div className="container flex flex-wrap m-auto bg-white">
+        <div className="bg-redancash flex flex-wrap w-full xl:w-3/5 lg:w-3/5 md:w-3/5 sm:w-full m-auto">
           <EncabezadoVideos
             key = {noticias.id}
             video = { noticias }
           /> 
         </div>
-        <div className = "bg-gray-300 w-2/5 ml-2" >
+        <div className = "bg-gray-300 w-full xl:w-2/5 lg:w-2/5 md:w-2/5" >
           <ListadoVideos 
             key = { noticias.id }
             videos = { noticias }

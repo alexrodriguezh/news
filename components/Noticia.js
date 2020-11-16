@@ -2,6 +2,7 @@ import React from 'react'
 
 const Noticia = ({noticia}) => {
 
+
     const { titulo, contenido, imagen, categoria } = noticia
 
     return(
@@ -9,10 +10,10 @@ const Noticia = ({noticia}) => {
             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
             <div className="flex items-center">
                 <div className="flex-shrink-0 h-10 w-10">
-                <img className="h-10 w-10" src={`http://localhost:1337${imagen.url}`} alt={titulo} />
+                    <img className="h-10 w-10" src={imagen.url} alt={titulo} />
                 </div>
                 <div className="ml-4">
-                <div className="text-sm leading-5 font-medium text-gray-900">{titulo}</div>
+                    <div className="text-sm leading-5 font-medium text-gray-900">{titulo}</div>
                 </div>
             </div>
             </td>

@@ -23,12 +23,25 @@ module.exports = {
         redancash: "#FF0032"
       },
       spacing: {
+        '52': '13rem',
         '96': '24rem',
         '128': '32rem',
       }
     },
+    aspectRatio: {
+      none: 0,
+      square: [1, 1],
+      "16/9": [16, 9],
+      "4/3": [4, 3],
+      "21/9": [21, 9]
+    }
   },
   variants: {
-    margin: ['responsive', 'last', 'hover', 'focus'],
+    margin: ['responsive', 'last', 'hover', 'focus', 'disabled'],
+    aspectRatio: ['responsive'],
   },
+  plugins: [
+    require("tailwindcss-responsive-embed"),
+    require("tailwindcss-aspect-ratio"),
+  ]
 }

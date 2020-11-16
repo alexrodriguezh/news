@@ -68,7 +68,7 @@ const editarPerfil = () => {
                             ) : (
                             <img
                                 className="absolute -mt-8 h-32 w-32 rounded-full ml-auto mr-auto object-cover border-white border-4 border-solid overflow-hidden"
-                                src={`http://localhost:1337${data.user.avatar.url}`}
+                                src={data.user.avatar.url}
                                 alt="Avatar perfil"
                             />
                         ) }
